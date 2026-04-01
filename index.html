@@ -2113,17 +2113,54 @@
         grid-template-columns: 1fr;
       }
 
+      /* Features — vertical tabs + panel stacked on mobile */
+      .features-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
       .feat-tabs {
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 10px;
-        padding-bottom: 4px;
-        -webkit-overflow-scrolling: touch;
+        flex-direction: column;
+        gap: 6px;
+        overflow: visible;
+        width: 100%;
       }
 
       .feat-tab {
+        flex-shrink: unset;
+        min-width: unset;
+        width: 100%;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+      }
+
+      .feat-tab-num {
         flex-shrink: 0;
-        min-width: 200px;
+      }
+
+      .feat-tab h3 {
+        font-size: 0.9375rem;
+        white-space: normal;
+        word-break: normal;
+        flex: 1;
+      }
+
+      /* Hide description under tab — panel has the content */
+      .feat-tab-desc {
+        display: none !important;
+      }
+
+      .feat-panels {
+        width: 100%;
+      }
+
+      .feat-visual {
+        min-height: auto;
+        padding: 24px 18px;
       }
 
       /* AI agents list */
