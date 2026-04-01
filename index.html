@@ -192,6 +192,13 @@
       letter-spacing: -0.02em;
     }
 
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+    }
+
     /* Nav links */
     .nav-links {
       display: flex;
@@ -1763,7 +1770,12 @@
       margin-bottom: 48px;
     }
 
-    .footer-brand {}
+    .footer-logo img {
+      height: 32px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+    }
 
     .footer-logo {
       display: flex;
@@ -1772,19 +1784,6 @@
       font-weight: 800;
       font-size: 1.125rem;
       margin-bottom: 14px;
-    }
-
-    .footer-logo .logo-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 7px;
-      background: linear-gradient(135deg, var(--accent), var(--cyan));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.875rem;
-      font-weight: 900;
-      color: #fff;
     }
 
     .footer-tagline {
@@ -2022,6 +2021,16 @@
         gap: 48px;
       }
 
+      /* AI terminal — prevent horizontal overflow */
+      .ai-terminal {
+        overflow-x: auto;
+      }
+
+      .terminal-body {
+        font-size: 0.6875rem;
+        padding: 16px 14px 8px;
+      }
+
       .hiw-steps {
         grid-template-columns: 1fr;
         gap: 36px;
@@ -2045,11 +2054,26 @@
         display: flex;
       }
 
+      /* Nav logo sizing on mobile */
+      .nav-logo img {
+        height: 28px;
+      }
+
       .hero-grid {
         grid-template-columns: 1fr;
         padding: 60px 0 80px;
         text-align: center;
-        gap: 48px;
+        gap: 40px;
+      }
+
+      /* Dashboard mock — constrain on mobile */
+      .hero-visual {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .dashboard-mock {
+        padding: 16px;
       }
 
       .hero-desc { margin: 0 auto 36px; }
@@ -2060,6 +2084,25 @@
 
       .hero-stats {
         justify-content: center;
+        gap: 20px;
+      }
+
+      /* Section headers centered on mobile */
+      .advantages-header,
+      .features-header,
+      .stories-header,
+      .pricing-header,
+      .hiw-header {
+        text-align: center;
+      }
+
+      .advantages-header .section-subtitle,
+      .features-header .section-subtitle,
+      .stories-header .section-subtitle,
+      .pricing-header .section-subtitle,
+      .hiw-header .section-subtitle {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .advantages-grid {
@@ -2075,11 +2118,25 @@
         overflow-x: auto;
         gap: 10px;
         padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
       }
 
       .feat-tab {
         flex-shrink: 0;
         min-width: 200px;
+      }
+
+      /* AI agents list */
+      .ai-agents {
+        gap: 10px;
+      }
+
+      .ai-agent-row {
+        padding: 12px 14px;
+      }
+
+      .agent-desc {
+        display: none; /* too much text on small screens */
       }
 
       .testimonials-grid {
@@ -2091,13 +2148,23 @@
         gap: 32px;
       }
 
+      .footer-tagline {
+        max-width: 100%;
+      }
+
       .cta-inner {
-        padding: 44px 24px;
+        padding: 40px 20px;
       }
 
       .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
+      }
+
+      .footer-bottom-links {
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
       .feat-metric-row {
@@ -2107,16 +2174,64 @@
       .cage-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
+      /* Pricing toggle */
+      .pricing-toggle {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
     }
 
     @media (max-width: 480px) {
       .hero-stats {
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      .stat {
+        text-align: center;
+        min-width: 80px;
       }
 
       .dash-stats-row {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .dash-stat-card .val {
+        font-size: 1rem;
+      }
+
+      .dash-chart {
+        height: 60px;
+      }
+
+      /* Cage grid 2 cols on very small */
+      .cage-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* How it works step circles */
+      .step-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+      }
+
+      /* Footer bottom links stack */
+      .footer-bottom-links {
+        gap: 10px;
+      }
+
+      /* Section padding reduction */
+      #advantage,
+      #features,
+      #stories,
+      #how-it-works,
+      #ai-engine,
+      #pricing {
+        padding: 72px 0;
       }
     }
   </style>
